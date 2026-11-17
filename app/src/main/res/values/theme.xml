@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">云听</string>
+    <string name="playback_widget_name">云听播放控制</string>
+    <string name="lyrics_widget_name">云听当前歌词</string>
+    <string name="recent_widget_name">云听最近播放</string>
+    <style name="AppTheme" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">#FAF8FE</item>
+        <item name="android:colorAccent">#32226F</item>
+    </style>
+</resources>

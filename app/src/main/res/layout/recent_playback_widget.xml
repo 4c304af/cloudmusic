@@ -1,0 +1,16 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_card" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@drawable/widget_card" android:orientation="vertical" android:padding="12dp">
+    <TextView android:layout_width="match_parent" android:layout_height="18dp" android:text="最近播放"
+        android:textColor="@color/widget_accent" android:textSize="11sp" />
+    <TextView android:id="@+id/widget_recent_first" android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:gravity="center_vertical" android:includeFontPadding="false"
+        android:maxLines="1" android:ellipsize="end" android:text="暂无记录" android:textStyle="bold"
+        android:textColor="@color/widget_text" android:textSize="13sp" />
+    <TextView android:id="@+id/widget_recent_second" android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:gravity="center_vertical" android:includeFontPadding="false"
+        android:maxLines="1" android:ellipsize="end" android:textColor="@color/widget_secondary" android:textSize="12sp" />
+    <TextView android:id="@+id/widget_recent_third" android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:gravity="center_vertical" android:includeFontPadding="false"
+        android:maxLines="1" android:ellipsize="end" android:textColor="@color/widget_secondary" android:textSize="12sp" />
+</LinearLayout>

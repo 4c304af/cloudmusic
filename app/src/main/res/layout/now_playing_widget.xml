@@ -1,0 +1,46 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_card" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@drawable/widget_card"
+    android:paddingHorizontal="12dp" android:paddingVertical="4dp">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="31dp"
+        android:orientation="horizontal" android:gravity="center_vertical">
+    <ImageView android:id="@+id/widget_cover" android:layout_width="30dp" android:layout_height="30dp"
+        android:layout_marginEnd="8dp" android:src="@drawable/yunting_icon"
+        android:scaleType="centerCrop" android:clipToOutline="true"
+        android:background="@drawable/widget_cover" android:contentDescription="@null" />
+    <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="match_parent"
+        android:orientation="vertical">
+    <TextView android:id="@+id/widget_title" android:layout_width="match_parent" android:layout_height="18dp"
+        android:text="云听" android:textSize="14sp" android:textStyle="bold"
+        android:textColor="@color/widget_text" android:includeFontPadding="false"
+        android:ellipsize="end" android:maxLines="1" />
+    <TextView android:id="@+id/widget_artist" android:layout_width="match_parent" android:layout_height="13dp"
+        android:textSize="10sp" android:textColor="@color/widget_secondary" android:includeFontPadding="false"
+        android:ellipsize="end" android:maxLines="1" />
+    </LinearLayout>
+    </LinearLayout>
+    <TextView android:id="@+id/widget_lyric" android:layout_width="match_parent" android:layout_height="26dp"
+        android:textSize="11sp" android:textColor="@color/widget_text" android:includeFontPadding="false"
+        android:ellipsize="end" android:maxLines="2" />
+    <TextView android:id="@+id/widget_translation" android:layout_width="match_parent" android:layout_height="13dp"
+        android:textSize="10sp" android:textColor="@color/widget_secondary" android:includeFontPadding="false"
+        android:ellipsize="end" android:maxLines="1" />
+    <ProgressBar android:id="@+id/widget_progress" style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent" android:layout_height="5dp" android:indeterminate="false"
+        android:progressTint="@color/widget_accent" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+        android:orientation="horizontal">
+        <TextView android:id="@+id/widget_previous" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent" android:gravity="center" android:text="‹" android:textSize="18sp"
+            android:textColor="@color/widget_text" android:contentDescription="上一首" />
+        <TextView android:id="@+id/widget_toggle" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent" android:gravity="center" android:text="▶"
+            android:textColor="@color/widget_accent" android:contentDescription="播放" />
+        <TextView android:id="@+id/widget_next" android:layout_width="0dp" android:layout_weight="1"
+            android:layout_height="match_parent" android:gravity="center" android:text="›" android:textSize="18sp"
+            android:textColor="@color/widget_text" android:contentDescription="下一首" />
+        <TextView android:id="@+id/widget_mode" android:layout_width="0dp" android:layout_weight="1.2"
+            android:layout_height="match_parent" android:gravity="center" android:text="循环" android:textSize="11sp"
+            android:textColor="@color/widget_text" android:contentDescription="切换循环模式" />
+    </LinearLayout>
+</LinearLayout>

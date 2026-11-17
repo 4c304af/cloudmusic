@@ -1,0 +1,51 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION" />
+    <uses-feature android:name="android.hardware.microphone" android:required="false" />
+    <queries>
+        <package android:name="io.github.proify.lyricon" />
+    </queries>
+
+    <application android:label="@string/app_name" android:icon="@drawable/yunting_icon"
+        android:theme="@style/AppTheme" android:allowBackup="false">
+        <meta-data android:name="lyricon_module" android:value="true" />
+        <meta-data android:name="lyricon_module_description" android:value="云听独立版歌词同步" />
+        <activity android:name=".MainActivity" android:exported="true" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <service android:name=".PlaybackService" android:exported="false"
+            android:foregroundServiceType="mediaPlayback">
+            <intent-filter>
+                <action android:name="androidx.media3.session.MediaSessionService" />
+            </intent-filter>
+        </service>
+        <service android:name=".RecognitionCaptureService" android:exported="false"
+            android:foregroundServiceType="mediaProjection" />
+        <receiver android:name=".NowPlayingWidget" android:exported="true"
+            android:permission="android.permission.BIND_APPWIDGET" android:label="@string/playback_widget_name">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/now_playing_widget" />
+        </receiver>
+        <receiver android:name=".CurrentLyricsWidget" android:exported="true"
+            android:permission="android.permission.BIND_APPWIDGET" android:label="@string/lyrics_widget_name">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/current_lyrics_widget" />
+        </receiver>
+        <receiver android:name=".RecentPlaybackWidget" android:exported="true"
+            android:permission="android.permission.BIND_APPWIDGET" android:label="@string/recent_widget_name">
+            <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/recent_playback_widget" />
+        </receiver>
+        <receiver android:name=".WidgetControls" android:exported="false" />
+        <receiver android:name=".DownloadCompletedReceiver" android:exported="true"
+            android:permission="android.permission.SEND_DOWNLOAD_COMPLETED_INTENTS">
+            <intent-filter><action android:name="android.intent.action.DOWNLOAD_COMPLETE" /></intent-filter>
+        </receiver>
+    </application>
+</manifest>

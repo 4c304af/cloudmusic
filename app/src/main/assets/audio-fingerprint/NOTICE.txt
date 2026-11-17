@@ -1,0 +1,3 @@
+afp.js and afp.wasm.js are the NetEase Cloud Music AFP fingerprint runtime assets
+from the api-enhanced public/audio_match_demo, also used by the existing version.
+index.html and fingerprint.js are the local integration for 云听独立版.
